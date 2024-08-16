@@ -51,8 +51,8 @@ class FeedFragment : Fragment() {
         binding.swipeRefreshLayout.setOnRefreshListener {
             binding.countryList.visibility = View.GONE
             binding.countryError.visibility = View.GONE
-
-            viewModel.refreshData()
+            binding.countryLoading.visibility = View.VISIBLE
+            viewModel.refreshFromAPI()
 
             binding.swipeRefreshLayout.isRefreshing = false
         }
@@ -112,5 +112,7 @@ class FeedFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 
 }
