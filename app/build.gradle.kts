@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.devtools.ksp")
+
+    id("kotlin-kapt")
+
 }
 
 android {
@@ -34,6 +37,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    dataBinding{
+        enable = true
     }
 
     viewBinding {
